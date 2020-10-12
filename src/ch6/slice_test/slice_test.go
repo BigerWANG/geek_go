@@ -28,15 +28,28 @@ func TestSilceGrowing(t *testing.T) {
 }
 
 func TestSilceShareMem(t *testing.T) {
+	// 引用类型
 	year := []string{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
+
+
+	t.Log(year, len(year), cap(year))
+
+	year = append(year, "dada")  // 当容量不够时会自动扩容，扩容长度是原silce的两倍
+	year = append(year, "dada") // 这个时候容量够用，就不需要扩容了
+
+
+	t.Log(year, len(year), cap(year))
+
+
 
 	Q3 := year[3:6]
 	t.Log(Q3, len(Q3), cap(Q3))  // len: 3, cap: 9
 
 	summer := year[5:8]
-
 	t.Log(summer, len(summer), cap(summer))  // len:3, cap: 7, cap表示的是截取位置到剩下的存储空间的容量：len(year) - 截取的开始位置
 
+
+	t.Log()
 
 }
 

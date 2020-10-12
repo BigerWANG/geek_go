@@ -1,19 +1,19 @@
 package fib
 
-func fib(num int) []int{
+func fib(num int) int{
 	// 实现一个斐波那契数列
 
 
-	var res []int
+	var res int
 
 	if num < 1 {
-		res = append(res, 0)
-		return res
+		return 1
 	}
 	if num <= 2 {
-		return append(res, num)
+		return num
 	}
 
+	res = fib(num-1) + fib(num-2)
 
 	return res
 
