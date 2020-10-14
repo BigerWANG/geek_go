@@ -7,7 +7,7 @@ import (
 )
 
 // golang 的装饰器
-func TimeSpent(inner func(op int) int)  func(op int) int {  // 接收一个函数作为参数，
+func TimeSpent(inner func(op int) int)  func(op int) int {  // 接收一个函数作为参数，并且返回一个函数
 	return func(op int) int {
 		start := time.Now()
 		ret := inner(op)
@@ -15,6 +15,7 @@ func TimeSpent(inner func(op int) int)  func(op int) int {  // 接收一个函�
 		return ret
 	}
 }
+
 
 func dosth(op int) int{
 	fmt.Println("I'm start working...")

@@ -17,9 +17,7 @@ func TestMapWithFunValue(t *testing.T) {  // 指定函数为value
 }
 
 
-
 var set map[int]bool  // 声明一个空map
-
 
 func mySet(value int)(bool){ // 使用map实现一个set
 	set = make(map[int]bool, 10)  // 初始化这个map
