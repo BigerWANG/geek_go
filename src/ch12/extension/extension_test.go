@@ -22,7 +22,6 @@ type Car struct {
 }
 
 func (c *Car)Run(){
-
 	c.isRunning = true
 	fmt.Println("car is running")
 }
