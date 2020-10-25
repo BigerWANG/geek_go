@@ -35,8 +35,8 @@ func (s *MyStuct) Read(myp []byte)(n int, err error){
 }
 
 func SortData(r Reader)  error{
-
-	
+	fmt.Println("")
+	return nil
 }
 
 
